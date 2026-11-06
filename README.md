@@ -12,6 +12,8 @@ This repository is the runnable integration core of a field-sales platform I bui
 
 Canvassers knock doors and book appointments. The office records what happened next (sold, pitched but missed, cancelled, couldn't contact) in a legacy CRM built for office staff, not for people on the doorstep. Canvassers had no quick way to see their own conversion rates, or which of their leads were worth ringing back.
 
+Nothing recorded the fieldwork itself either: which streets had been knocked, or where, door by door, leads were being lost. So there was no data to bring to team meetings for support and coaching, only memory.
+
 **For whom:** canvassers (their own numbers and call-back list, on their phone), team leaders (coaching from real data), and the office (no extra admin).
 
 **Constraints I had to design around:**
@@ -136,8 +138,9 @@ npm test
 The private production app (Next.js 15, TypeScript, Supabase/Postgres with PostGIS, MapLibre GL) adds:
 
 - **A personal login and dashboard for every canvasser,** on their phone. It shows their own leads, results, "this week" view and call-back list. Row-level security means each canvasser can only ever see their own CRM data.
-- **Offline-first field logging,** with an on-device queue that syncs idempotently when signal returns. Raw GPS never leaves the phone.
+- **Door-by-door knock logging,** offline-first, with an on-device queue that syncs idempotently when signal returns. Coverage maps show which streets have been worked and what happened at each door. Raw GPS never leaves the phone.
 - **One identity per door:** the UPRN (Unique Property Reference Number) from Ordnance Survey's open data, labelled with addresses from the government's open EPC register. CRM leads are matched to a door by postcode, house number and street.
+- **Street targeting from EPC ratings:** the open EPC register's energy ratings, joined to doors by UPRN, highlight streets where many homes rate poorly. Those are the streets most likely to want new windows and doors.
 - **Admin tools** for coverage maps, deterministic door-to-door routes, team insights and coaching.
 
 ## How I used AI to build this
