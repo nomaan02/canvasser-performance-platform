@@ -1,0 +1,24 @@
+{
+  "name": "canvasser-performance-platform",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Read-only CRM integration and per-canvasser performance reporting for door-to-door sales teams.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.12"
+  },
+  "scripts": {
+    "demo": "tsx src/demo.ts",
+    "sync": "tsx src/sync-cli.ts",
+    "mock-crm": "tsx mock/crm-server.ts",
+    "mock-data": "tsx mock/generate-leads.ts",
+    "test": "tsx --test test/*.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}

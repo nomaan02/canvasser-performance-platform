@@ -1,0 +1,10 @@
+{
+  "_comment": "CRM 'Lead Status' text -> app status. A value missing here is kept raw and flagged as unknown, never guessed.",
+  "Sold": "sale",
+  "Pitch&Miss": "pm",
+  "Blowout": "blowout",
+  "UTC": "utc",
+  "Re-App": "re_app",
+  "Booked": "confirmed",
+  "Uncontacted": "pending"
+}

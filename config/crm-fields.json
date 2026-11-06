@@ -1,0 +1,17 @@
+{
+  "_comment": "Maps what this app needs to the field names in YOUR CRM. vtiger custom fields are named cf_<number>; find yours in CRM Settings > Module Layouts > Leads, or call the API's 'describe' operation. The values below match the mock CRM.",
+  "id": "id",
+  "leadNumber": "lead_no",
+  "street": "lane",
+  "postcode": "code",
+  "status": "leadstatus",
+  "createdAt": "createdtime",
+  "modifiedAt": "modifiedtime",
+  "appointmentDate": "cf_101",
+  "appointmentTime": "cf_102",
+  "saleAmount": "cf_103",
+  "canvasser": "cf_104",
+  "resultNote": "cf_105",
+  "branch": "cf_106",
+  "repResultNote": "cf_107"
+}
